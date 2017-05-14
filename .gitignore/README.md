@@ -1,2 +1,0 @@
-# Doc
-Documents of robocon
