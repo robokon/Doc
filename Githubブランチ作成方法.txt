@@ -1,0 +1,6 @@
+「Creat new file」か「Upload file」を行うときに
+Commit changesの欄にて「Create a new branch」を選択する。
+
+ →リポジトリ内にブランチが作成される。
+
+変更をブランチからマージするときは、New pull requestを実施する
