@@ -1,6 +1,14 @@
-�uCreat new file�v���uUpload file�v���s���Ƃ���
-Commit changes�̗��ɂāuCreate a new branch�v��I������B
+ブランチの作成方法は２パターン
 
- �����|�W�g�����Ƀu�����`���쐬�����B
+パターン1(コミットと同時にブランチ作成)
+ 「Creat new file」か「Upload file」を行うときに
+ Commit changesの欄にて「Create a new branch」を選択する。
 
-�ύX���u�����`����}�[�W����Ƃ��́ANew pull request�����{����
+  →リポジトリ内にブランチが作成される。
+
+ 変更をブランチからマージするときは、New pull requestを実施する
+ 
+ パターン2(ブランチのみ作成)
+ 　<Code>タブの直下にある「Branch:xxx」を選択する。
+  入力欄にブランチ名を入れて「Create:ブランチ名　from:xxx」をクリックする　
+  (xxxをベースとしてブランチが作成される)
