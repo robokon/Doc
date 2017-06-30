@@ -1,0 +1,8 @@
+伊藤メモ
+参考サイト
+
+<http://qiita.com/robotan0921/items/d1b46f3f5c448d1e04a0>
+
+<http://lejos-osek.sourceforge.net/jp/datalogging.htm>
+
+<http://lejos-osek.sourceforge.net/jp/nxtgamepad.htm>
