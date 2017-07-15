@@ -45,8 +45,8 @@ void look_up_gate_main(void)
     else {
         /* 目印の音 */
         ev3_speaker_set_volume(100); 
-        ev3_speaker_play_tone(NOTE_C4, 200);
-        ev3_speaker_play_tone(NOTE_C4, 200);
+        ev3_speaker_play_tone(NOTE_C4, 300);
+        ev3_speaker_play_tone(NOTE_C4, 300);
         main_status = STAT_NORMAL;
         return;
     }
@@ -67,6 +67,9 @@ void look_up_gate_main(void)
         else {
             /* 倒立振り子制御が有効 */
             if (is_balance_control_) {
+                /* tail_angle_の角度が期待値になるまで待つ */
+                /* ★4msec周期起動なのでモータ制御が早すぎて上手くいかないと思うので，暫定で200msのスリープを入れ緩やかにする */
+                tslp_tsk(SLEEP_TIME);
                 tail_angle_ = TAIL_ANGLE_STAND_UP;
                 /* 倒立振り子制御は無効にする */
                 is_balance_control_ = false;
