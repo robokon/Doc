@@ -1,0 +1,45 @@
+getdate DATE '%Y%m%d_%H%M%S.csv'
+LOGPATH = 'C:\tmp\'
+strconcat LOGPATH DATE
+
+fileopen csv LOGPATH 1
+
+SprintF2 connStr '/C=%d /BAUD=9600' 3
+connect connStr
+setecho 0
+
+;InputBox 'input r or l' 'question'
+;send inputstr
+
+
+regexstr = "^KP,KI,KD"
+end_regexstr = "^end to send data"
+
+while 1
+  recvln
+
+  strmatch inputstr regexstr
+  ;inputstrとregexstrが一致していたら0以外
+  ;新ファイル作成
+  if result == 0 then
+  else
+    getdate DATE '%Y%m%d_%H%M%S.csv'
+    LOGPATH = 'C:\tmp\'
+    strconcat LOGPATH DATE
+    if csv == -1 then
+    else
+      fileclose csv
+    endif
+    fileopen csv LOGPATH 1
+  endif
+  
+  strmatch inputstr end_regexstr
+  ;一致していなかったら書き込む
+  if result == 0 then
+    filewriteln csv inputstr
+  else
+    fileclose csv
+    csv = -1
+  endif
+
+endwhile
